@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+const foo = fetch('http://localhost:5000/api');
+
 function App() {
   return (
     <div className="App">
@@ -8,6 +10,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+          {foo}
         </p>
         <a
           className="App-link"
