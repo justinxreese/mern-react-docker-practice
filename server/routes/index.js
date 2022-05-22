@@ -3,9 +3,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  const url = 'mongodb://mongo:27017/mern_test';
-  mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
   res.render('index', { title: 'Express' });
+});
+
+router.get('/api/', function(req, res, next) {
+  res.send('API is running');
 });
 
 module.exports = router;

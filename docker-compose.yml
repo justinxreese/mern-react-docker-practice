@@ -30,14 +30,14 @@ services:
     networks:
       - mern-network
     volumes:
-      - ./server/src:/usr/app/src
+      - ./server/:/usr/src/app
       - /usr/src/app/node_modules
     depends_on:
       - db
     environment:
       - MONGO_URL=mongodb://db:27017
       - CLIENT=http://localhost:3000
-    command: nodemon -L src/index.js
+    command: /usr/src/app/node_modules/.bin/nodemon -L src/index.js
 
   db:
     image: mongo:3.6.19-xenial
