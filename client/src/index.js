@@ -5,11 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const foo = fetch('http://localhost:5000/api');
 root.render(
   <React.StrictMode>
     <App />
-    foo
   </React.StrictMode>
 );
 

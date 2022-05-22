@@ -32,7 +32,6 @@ services:
     volumes:
       - ./server/src:/usr/app/src
       - /usr/src/app/node_modules
-
     depends_on:
       - db
     environment:
