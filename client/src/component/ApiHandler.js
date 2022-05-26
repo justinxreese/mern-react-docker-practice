@@ -6,7 +6,7 @@ export default class ApiHandler extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/api/', {mode: 'cors'})
+    fetch('http://localhost:3001/api/', {mode: 'cors'})
       .then(response => response.text())
       .then(text => this.setState({api_text: text}));
   }
