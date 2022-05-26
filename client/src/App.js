@@ -1,15 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
-/* const foo = fetch('http://localhost:5000/'); */
-
-const getData = () => {
-  fetch('https://jsonplaceholder.typicode.com/users')
-    .then((res) => res.json())
-    .then((res) => {
-      console.log(res)
-    })
-}
+import ApiHandler from './component/ApiHandler';
 
 function App() {
   return (
@@ -18,6 +9,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+          <ApiHandler />
         </p>
         <a
           className="App-link"
