@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "PORT=3001 node ./bin/www",
-    "dev": "nodemon ./bin/www",
+    "dev": "DEBUG=express:* PORT=3001 nodemon ./bin/www",
     "cypress": "cypress open"
   },
   "dependencies": {
@@ -14,6 +14,8 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.16",
+    "winston": "^3.7.2"
   }
 }
