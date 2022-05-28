@@ -6,8 +6,4 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/api/', function(req, res, next) {
-  res.send('API is running');
-});
-
 module.exports = router;
