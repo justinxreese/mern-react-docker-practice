@@ -1,27 +1,19 @@
 var express = require('express');
 var router = express.Router();
+const FileLister = require('../src/services/fileLister');
 
 router.get('/', function(req, res, next) {
   res.send('API is running');
 });
 
 router.get('/files/', function(req, res, next) {
-  json = {
-    "files": [
-      {
-        "name": "file1.txt",
-        "size": "1.2 MB",
-        "type": "text/plain",
-
-      },
-      {
-        "name": "file2.txt",
-        "size": "1.2 MB",
-        "type": "text/plain",
-      },
-    ]
-  }
-  res.send(json);
+  const FileListerInstance = new FileLister('/Users/justinxreese');
+  FileListerInstance.list()
+    .then((files) => res.send(JSON.stringify(files)))
+    .catch((error) => {
+        console.error(error);
+        res.status(500)
+    });
 });
 
 router.get('/files/:file', function(req, res, next) {
