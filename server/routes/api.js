@@ -8,12 +8,9 @@ router.get('/', function(req, res, next) {
 
 router.get('/files/', function(req, res, next) {
   const FileListerInstance = new FileLister('/Users/justinxreese');
-  FileListerInstance.list()
-    .then((files) => res.send(JSON.stringify(files)))
-    .catch((error) => {
-        console.error(error);
-        res.status(500)
-    });
+  FileListerInstance.list.then(function(files) {
+    res.send(JSON.stringify(files));
+  });
 });
 
 router.get('/files/:file', function(req, res, next) {

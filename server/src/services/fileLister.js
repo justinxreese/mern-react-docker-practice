@@ -5,17 +5,17 @@ class FileLister {
     this.path = path;
   }
 
-  list(){
+  get list(){
     return this.directoryContents();
   }
 
   directoryContents() {
     return new Promise((resolve, reject) => {
-        fs.readdir(this.path, { withFileTypes: true }, (error, files) => {
-          if (error) reject(error);
-          resolve(files.map((item) => item.name))
-        });
-    })
+      fs.readdir(this.path, { withFileTypes: true }, (error, files) => {
+        if (error) reject(error);
+        resolve(files.map((item) => item.name))
+      });
+    });
   }
 }
 
